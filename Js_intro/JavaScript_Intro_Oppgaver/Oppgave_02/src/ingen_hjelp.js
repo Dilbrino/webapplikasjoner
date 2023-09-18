@@ -1,17 +1,37 @@
-import './styles.css';
-const users = [
-  { id: 0, name: "Trude", age: 77 },
-  { id: 1, name: "Simen", age: 85 },
-  { id: 2, name: "Lars", age: 99 },
-  { id: 3, name: "Ali", age: 34 },
-  { id: 4, name: "Finn", age: 60 },
-  { id: 5, name: "Kåre", age: 70 },
-  { id: 6, name: "Hanne", age: 20 },
-  { id: 7, name: "Åse", age: 21 },
-  { id: 8, name: "Anne", age: 6 },
-  { id: 9, name: "Amanda", age: 31 },
-  { id: 10, name: "Morgan", age: 87 }
+
+const names = [
+  'Trude',
+  'Simen',
+  'Lars',
+  'Ali',
+  'Finn',
+  'Kåre',
+  'Hanne',
+  'Åse',
+  'Anne',
+  'Amanda',
+  'Morgan',
 ];
+
+const users = [];
+
+const createRandomAge = () => {
+  return Math.floor(Math.random() * 100 + 1);
+};
+
+const createUsers = (userCount) => {
+  for (let i = 0; i < userCount; i++) {
+    const user = {
+      id: i,
+      name: names[i],
+      age: createRandomAge(),
+    };
+    users.push(user);
+  }
+};
+
+createUsers(11);
+
 
 // TODO: Hent HTML #id med getElementById
 // TODO: Lag en funksjon som kan brukes til å skrive ut HTMLen for å se brukerene. Du kan bruke users importert over for å hente en liste med 10 brukere
